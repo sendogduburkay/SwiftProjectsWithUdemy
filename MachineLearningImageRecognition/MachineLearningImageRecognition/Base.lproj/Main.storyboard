@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MachineLearningImageRecognition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BZs-Oz-9VT">
+                                <rect key="frame" x="63.5" y="64" width="287" height="429"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="429" id="W9k-2W-HWj"/>
+                                    <constraint firstAttribute="width" constant="287" id="fYj-Qz-Sv6"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="429" id="hyC-0m-I14"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="287" id="rzg-5q-S7q"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jg-tn-H00">
+                                <rect key="frame" x="63.5" y="529" width="287" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6ku-W7-56E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pm8-K5-o1L">
+                                <rect key="frame" x="121" y="597" width="172" height="85"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Change"/>
+                                <connections>
+                                    <action selector="changeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w4j-ps-cri"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BZs-Oz-9VT" firstAttribute="leading" secondItem="7jg-tn-H00" secondAttribute="leading" id="3Iz-MH-KMt"/>
+                            <constraint firstItem="pm8-K5-o1L" firstAttribute="top" secondItem="7jg-tn-H00" secondAttribute="bottom" constant="8" id="9Mc-vB-gEC"/>
+                            <constraint firstItem="BZs-Oz-9VT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MtW-Ba-RdF"/>
+                            <constraint firstItem="pm8-K5-o1L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="Q4f-Xs-Ik1"/>
+                            <constraint firstItem="BZs-Oz-9VT" firstAttribute="trailing" secondItem="7jg-tn-H00" secondAttribute="trailing" id="bmx-Ix-mtH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pm8-K5-o1L" secondAttribute="bottom" constant="180" id="gP2-BM-fg2"/>
+                            <constraint firstItem="7jg-tn-H00" firstAttribute="centerX" secondItem="pm8-K5-o1L" secondAttribute="centerX" id="h22-ae-71X"/>
+                            <constraint firstItem="7jg-tn-H00" firstAttribute="top" secondItem="BZs-Oz-9VT" secondAttribute="bottom" constant="36" id="p2J-rD-rgu"/>
+                            <constraint firstItem="BZs-Oz-9VT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="rbg-0N-sF0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="BZs-Oz-9VT" id="ZXz-C5-8hm"/>
+                        <outlet property="resultLabel" destination="7jg-tn-H00" id="Jxd-7c-eMh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44.927536231884062" y="69.642857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
