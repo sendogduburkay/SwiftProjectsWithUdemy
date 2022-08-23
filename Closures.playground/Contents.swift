@@ -24,3 +24,4 @@ calculate(num1: 5, num2: 2, myFunction: { (num1, num2) in
 calculate(num1: 5, num2: 2, myFunction: { $0 * $1 })
 
 
+print("ff")
