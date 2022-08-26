@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign InVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InstaCloneParse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="signInVC" customModule="InstaCloneParse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-391" y="-50"/>
         </scene>
-        <!--View Controller-->
+        <!--UploadVC-->
         <scene sceneID="760-QI-6tR">
             <objects>
-                <viewController id="VYh-tz-dpJ" sceneMemberID="viewController">
+                <viewController id="VYh-tz-dpJ" customClass="UploadVC" customModule="InstaCloneParse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sHi-S8-4pa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="2973.913043478261" y="286.60714285714283"/>
         </scene>
-        <!--View Controller-->
+        <!--FeedVC-->
         <scene sceneID="ni9-fF-b36">
             <objects>
-                <viewController id="WIx-zc-Bww" sceneMemberID="viewController">
+                <viewController id="WIx-zc-Bww" customClass="FeedVC" customModule="InstaCloneParse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yTj-Sy-8a6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
