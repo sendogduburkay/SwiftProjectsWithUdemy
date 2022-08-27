@@ -70,12 +70,12 @@
 				4B15AF1228B834C00062FFC8 /* AppDelegate.swift */,
 				4B15AF1428B834C00062FFC8 /* SceneDelegate.swift */,
 				4B15AF1628B834C00062FFC8 /* signInVC.swift */,
+				4B62D7C628B97CB400B8999D /* UploadVC.swift */,
+				4B62D7C428B97CA700B8999D /* FeedVC.swift */,
 				4B15AF1828B834C00062FFC8 /* Main.storyboard */,
 				4B15AF1B28B834C10062FFC8 /* Assets.xcassets */,
 				4B15AF1D28B834C10062FFC8 /* LaunchScreen.storyboard */,
 				4B15AF2028B834C10062FFC8 /* Info.plist */,
-				4B62D7C428B97CA700B8999D /* FeedVC.swift */,
-				4B62D7C628B97CB400B8999D /* UploadVC.swift */,
 			);
 			path = InstaCloneParse;
 			sourceTree = "<group>";
