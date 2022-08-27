@@ -8,14 +8,18 @@
 import UIKit
 
 class UploadVC: UIViewController {
-
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var commentText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func postButtonClicked(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
