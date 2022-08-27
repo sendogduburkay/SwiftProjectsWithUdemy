@@ -159,7 +159,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnd-s5-V7M">
-                                                    <rect key="frame" x="20" y="11" width="100" height="25"/>
+                                                    <rect key="frame" x="61" y="11" width="100" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="clZ-pu-VaG"/>
                                                         <constraint firstAttribute="width" constant="100" id="nnc-qh-vA3"/>
@@ -191,8 +191,12 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Comment"/>
                                                 </button>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yYx-YC-9cw">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yYx-YC-9cw">
                                                     <rect key="frame" x="61" y="44" width="294" height="161"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="161" id="mQF-2Z-MZ8"/>
+                                                        <constraint firstAttribute="width" constant="294" id="paz-gh-chK"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nh-oB-Sb8">
                                                     <rect key="frame" x="61" y="255" width="51" height="31"/>
@@ -207,13 +211,13 @@
                                                 <constraint firstItem="yYx-YC-9cw" firstAttribute="trailing" secondItem="sqM-Gm-oIr" secondAttribute="trailing" id="1p0-cK-AWi"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="yYx-YC-9cw" secondAttribute="trailing" constant="39" id="34p-2j-WQp"/>
                                                 <constraint firstItem="mnd-s5-V7M" firstAttribute="top" secondItem="r6K-cb-dp5" secondAttribute="topMargin" id="3fN-t3-LeC"/>
-                                                <constraint firstItem="mnd-s5-V7M" firstAttribute="leading" secondItem="r6K-cb-dp5" secondAttribute="leadingMargin" id="6qP-KQ-9vA"/>
                                                 <constraint firstItem="mnd-s5-V7M" firstAttribute="baseline" secondItem="U1U-3q-sV9" secondAttribute="baseline" id="FUZ-5N-Kjy"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="9nh-oB-Sb8" secondAttribute="bottom" constant="7" id="KkH-gt-TAr"/>
                                                 <constraint firstItem="yYx-YC-9cw" firstAttribute="leading" secondItem="sqM-Gm-oIr" secondAttribute="leading" id="MFO-Wg-3t8"/>
                                                 <constraint firstItem="sqM-Gm-oIr" firstAttribute="top" secondItem="yYx-YC-9cw" secondAttribute="bottom" constant="8" id="UmR-7q-KUs"/>
                                                 <constraint firstItem="yYx-YC-9cw" firstAttribute="top" secondItem="mnd-s5-V7M" secondAttribute="bottom" constant="8" id="WPe-hI-XOP"/>
                                                 <constraint firstItem="sqM-Gm-oIr" firstAttribute="trailing" secondItem="bKV-D3-437" secondAttribute="trailing" id="X2H-CD-2IL"/>
+                                                <constraint firstItem="mnd-s5-V7M" firstAttribute="leading" secondItem="yYx-YC-9cw" secondAttribute="leading" id="Xlc-9h-gnj"/>
                                                 <constraint firstItem="9nh-oB-Sb8" firstAttribute="baseline" secondItem="bKV-D3-437" secondAttribute="baseline" id="ZaR-GM-OW5"/>
                                                 <constraint firstItem="sqM-Gm-oIr" firstAttribute="leading" secondItem="9nh-oB-Sb8" secondAttribute="leading" id="aQw-KL-V4m"/>
                                                 <constraint firstItem="yYx-YC-9cw" firstAttribute="leading" secondItem="r6K-cb-dp5" secondAttribute="leadingMargin" constant="41" id="cuq-LS-S2G"/>
