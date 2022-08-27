@@ -66,7 +66,7 @@ class signInVC: UIViewController {
                     if error != nil{
                         self.makeAlert(title: "Error", message: error?.localizedDescription ?? "Error")
                     }else{
-                        self.performSegue(withIdentifier: "toPlacesVC", sender: nil)
+                        self.performSegue(withIdentifier: "toTabBar", sender: nil)
                         print("ok")
                     }
                 }

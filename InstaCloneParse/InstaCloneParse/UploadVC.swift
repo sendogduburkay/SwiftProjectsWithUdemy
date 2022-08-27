@@ -64,6 +64,7 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate & UINavigation
                 self.commentText.text = ""
                 self.imageView.image = UIImage(named: "image.png")
                 self.tabBarController?.selectedIndex = 0
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newPost"), object: nil)
             }else{
                 let ac = UIAlertController(title: "Error", message: error?.localizedDescription ?? "Error", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "OK", style: .default))

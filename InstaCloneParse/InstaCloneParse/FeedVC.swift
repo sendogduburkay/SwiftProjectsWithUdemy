@@ -6,24 +6,89 @@
 //
 
 import UIKit
+import Parse
 
-class FeedVC: UIViewController {
-
+class FeedVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    @IBOutlet var tableView: UITableView!
+    var postOwnerArray = [String]()
+    var postCommentArray = [String]()
+    var postUUIDArray = [String]()
+    var postImageArray = [PFFileObject]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutClicked))
+        
+        getData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name(rawValue: "newPost"), object: nil)
     }
-    */
-
+    
+    
+    @objc func getData(){
+        let query = PFQuery(className: "Posts")
+        query.addDescendingOrder("createdAt")
+        query.findObjectsInBackground { objects, error in
+            if error != nil{
+                self.makeAlert(title: "Error", message: error?.localizedDescription ?? "error")
+            }else{
+                self.postUUIDArray.removeAll()
+                self.postOwnerArray.removeAll()
+                self.postCommentArray.removeAll()
+                self.postImageArray.removeAll()
+                if let objects = objects{
+                if objects.count > 0{
+                    for object in objects{
+                        self.postOwnerArray.append(object.object(forKey: "postOwner") as! String)
+                        self.postCommentArray.append(object.object(forKey: "postComment") as! String)
+                        self.postUUIDArray.append(object.object(forKey: "postUUID") as! String)
+                        self.postImageArray.append(object.object(forKey: "postImage") as! PFFileObject)
+                    }
+                    }
+                }
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return postUUIDArray.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedCell
+        cell.usernameLabel.text = postOwnerArray[indexPath.row]
+        cell.commentLabel.text = postCommentArray[indexPath.row]
+        cell.postuuidLabel.text = postUUIDArray[indexPath.row]
+        postImageArray[indexPath.row].getDataInBackground { data, error in
+            if error == nil{
+                
+                cell.postImage.image = UIImage(data: data!)
+            }else{
+                print("Error in imageview!")
+            }
+        }
+        
+        return cell
+    }
+    
+    
+    @objc func logoutClicked(){
+        PFUser.logOutInBackground { error in
+            if error == nil{
+                self.performSegue(withIdentifier: "toSignIn", sender: nil)
+            }
+        }
+    }
+    
+    func makeAlert(title: String, message: String){
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac,animated: true)
+    }
 }
