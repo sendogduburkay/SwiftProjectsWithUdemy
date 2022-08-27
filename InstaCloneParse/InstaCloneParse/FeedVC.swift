@@ -25,13 +25,22 @@ class FeedVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         getData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name(rawValue: "newPost"), object: nil)
+    }
     
-    func getData(){
+    
+    @objc func getData(){
         let query = PFQuery(className: "Posts")
+        query.addDescendingOrder("createdAt")
         query.findObjectsInBackground { objects, error in
             if error != nil{
                 self.makeAlert(title: "Error", message: error?.localizedDescription ?? "error")
             }else{
+                self.postUUIDArray.removeAll()
+                self.postOwnerArray.removeAll()
+                self.postCommentArray.removeAll()
+                self.postImageArray.removeAll()
                 if let objects = objects{
                 if objects.count > 0{
                     for object in objects{
