@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 class UploadVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet var imageView: UIImageView!
@@ -47,16 +48,29 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate & UINavigation
     
     @IBAction func postButtonClicked(_ sender: Any) {
         postButton.isEnabled = false
+        let object = PFObject(className: "Posts")
+        object["postComment"] = commentText.text
+        object["postOwner"] = PFUser.current()!.username
+        object["postUUID"] = UUID().uuidString
+        
+        if let data = imageView.image?.jpegData(compressionQuality: 0.5){
+            let uuidString = UUID().uuidString
+            let pfFile = PFFileObject(name: uuidString, data: data)
+            object["postImage"] = pfFile
+        }
+        
+        object.saveInBackground { (success, error) in
+            if error == nil{
+                self.commentText.text = ""
+                self.imageView.image = UIImage(named: "image.png")
+                self.tabBarController?.selectedIndex = 0
+            }else{
+                let ac = UIAlertController(title: "Error", message: error?.localizedDescription ?? "Error", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(ac,animated: true)
+            }
+        }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
