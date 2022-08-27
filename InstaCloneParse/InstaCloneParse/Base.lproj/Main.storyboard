@@ -93,16 +93,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="viH-jP-uYv">
-                                <rect key="frame" x="50" y="128" width="314" height="204"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="viH-jP-uYv">
+                                <rect key="frame" x="20" y="128" width="374" height="360"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="360" id="9vr-hj-34D"/>
+                                </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="comment" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hOW-dd-kyu">
-                                <rect key="frame" x="50" y="377" width="314" height="34"/>
+                                <rect key="frame" x="20" y="533" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dp5-Qg-NiN">
-                                <rect key="frame" x="311" y="471" width="53" height="31"/>
+                                <rect key="frame" x="341" y="627" width="53" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Post"/>
                                 <connections>
@@ -117,8 +120,8 @@
                             <constraint firstItem="viH-jP-uYv" firstAttribute="top" secondItem="gWO-mo-xSW" secondAttribute="top" constant="40" id="7m6-Bc-8ne"/>
                             <constraint firstItem="dp5-Qg-NiN" firstAttribute="top" secondItem="hOW-dd-kyu" secondAttribute="bottom" constant="60" id="AGG-cV-oJI"/>
                             <constraint firstItem="hOW-dd-kyu" firstAttribute="top" secondItem="viH-jP-uYv" secondAttribute="bottom" constant="45" id="Cal-Ik-PBJ"/>
-                            <constraint firstItem="viH-jP-uYv" firstAttribute="leading" secondItem="gWO-mo-xSW" secondAttribute="leading" constant="50" id="Lto-Nh-7rh"/>
-                            <constraint firstItem="gWO-mo-xSW" firstAttribute="trailing" secondItem="viH-jP-uYv" secondAttribute="trailing" constant="50" id="U9N-3i-h3c"/>
+                            <constraint firstItem="viH-jP-uYv" firstAttribute="leading" secondItem="gWO-mo-xSW" secondAttribute="leading" constant="20" id="Lto-Nh-7rh"/>
+                            <constraint firstItem="gWO-mo-xSW" firstAttribute="trailing" secondItem="viH-jP-uYv" secondAttribute="trailing" constant="20" id="U9N-3i-h3c"/>
                             <constraint firstItem="hOW-dd-kyu" firstAttribute="leading" secondItem="viH-jP-uYv" secondAttribute="leading" id="e0R-B6-QtG"/>
                             <constraint firstItem="gWO-mo-xSW" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="dp5-Qg-NiN" secondAttribute="bottom" constant="311" id="lPu-Pb-SdQ"/>
                             <constraint firstItem="dp5-Qg-NiN" firstAttribute="trailing" secondItem="hOW-dd-kyu" secondAttribute="trailing" id="qsi-za-hU3"/>
@@ -128,6 +131,7 @@
                     <connections>
                         <outlet property="commentText" destination="hOW-dd-kyu" id="lPU-Gf-UH9"/>
                         <outlet property="imageView" destination="viH-jP-uYv" id="VxG-bZ-L62"/>
+                        <outlet property="postButton" destination="dp5-Qg-NiN" id="eqU-CY-3DQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9B-oK-8cn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
