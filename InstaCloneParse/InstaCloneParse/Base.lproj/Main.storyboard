@@ -11,7 +11,7 @@
         <!--Sign InVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="signInVC" customModule="InstaCloneParse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signInVC" id="BYZ-38-t0r" customClass="signInVC" customModule="InstaCloneParse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,6 +75,7 @@
                             <constraint firstItem="rmF-VX-4uO" firstAttribute="top" secondItem="lNY-Ny-g1E" secondAttribute="bottom" constant="22" id="mck-Kf-swn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="tjz-lM-YtK"/>
                     <connections>
                         <outlet property="passwordText" destination="rmF-VX-4uO" id="isu-Jk-eNF"/>
                         <outlet property="usernameText" destination="lNY-Ny-g1E" id="jgk-CU-0jz"/>
@@ -136,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9B-oK-8cn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2973.913043478261" y="286.60714285714283"/>
+            <point key="canvasLocation" x="2974" y="376"/>
         </scene>
         <!--FeedVC-->
         <scene sceneID="ni9-fF-b36">
@@ -241,9 +242,11 @@
                             <constraint firstAttribute="trailing" secondItem="qSN-SF-Rgw" secondAttribute="trailing" id="urh-A6-HvO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mXx-H2-B5N">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="XxR-lp-f1E"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="mXx-H2-B5N"/>
+                    <connections>
+                        <outlet property="tableView" destination="qSN-SF-Rgw" id="dOr-hc-6CX"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toSignIn" modalPresentationStyle="fullScreen" id="83A-ui-uZg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TlD-FQ-tpG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
